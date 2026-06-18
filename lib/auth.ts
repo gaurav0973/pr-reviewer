@@ -9,9 +9,14 @@ export const auth = betterAuth({
     }),
     socialProviders: {
         github: {
-        clientId: process.env.GITHUB_CLIENT_ID as string,
-        clientSecret: process.env.GITHUB_CLIENT_SECRET as string,
+            clientId: process.env.GITHUB_CLIENT_ID as string,
+            clientSecret: process.env.GITHUB_CLIENT_SECRET as string,
+            mapProfileToUser: async (profile) => ({
+                email: profile.email ?? `${profile.id}@user.noreply.github.com`,
+                name: profile.name ?? profile.login
+            })
         },
+
     },
 
     // allows you to use cookies for authentication in Next.js
