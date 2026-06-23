@@ -48,10 +48,10 @@ export async function POST(request: Request) {
   let event: RazorpayWebhookBody;
   try {
     event = JSON.parse(body) as RazorpayWebhookBody;
-    console.log("Razorpay webhook event:", event.event);
-    console.log("Razorpay webhook payload:", event.payload);
-    console.log("Razorpay webhook subscription:", event.payload.subscription)
-    console.log("Razorpay webhook subscription entity:", event.payload.subscription?.entity)
+    // console.log("Razorpay webhook event:", event.event);
+    // console.log("Razorpay webhook payload:", event.payload);
+    // console.log("Razorpay webhook subscription:", event.payload.subscription)
+    // console.log("Razorpay webhook subscription entity:", event.payload.subscription?.entity)
   } catch {
     return Response.json({ error: "Invalid payload" }, { status: 400 });
   }
