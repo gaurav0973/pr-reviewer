@@ -20,11 +20,8 @@ function PullRequestsNotConnected() {
         Install the GitHub App first to view the pull requests that have been
         captured for review.
       </p>
-      <Button
-        nativeButton={false}
-        render={<Link href={DASHBOARD_ROUTES.github} />}
-      >
-        Go to GitHub App
+      <Button asChild>
+        <Link href={DASHBOARD_ROUTES.github}>Go to GitHub App</Link>
       </Button>
     </div>
   );
